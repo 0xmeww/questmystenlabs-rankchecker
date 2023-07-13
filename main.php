@@ -36,15 +36,29 @@ $totalFlip = $res[1]['result']['data']['entry']['numCommandsDeSuiFlip'];
 $totalEthos8192 = $res[1]['result']['data']['entry']['numCommandsEthos8192'];
 $totalCompletedJourney = $res[1]['result']['data']['entry']['numCommandsJourneyToMountSogol'];
 $totalAbsenMiniMiner = $res[1]['result']['data']['entry']['numCommandsMiniMiners'];
+$suspectedBot = $res[1]['result']['data']['entry']['suspectedBot'];
+$ban = true;
+if($suspectedBot == $ban) {
+    $suspectedBot = 'YES';
+} else {
+    $suspectedBot = 'NO';
+}
+$fee = $totalEthos8192 * 0.000843844;
 
-print_r("
+print_r("\033[32m
+==============================================================
 - MY WALLET : $wallet
-- TOTAL BERMAIN FLIP : $totalFlip ( di kali 10 )
-- TOTAL SCORE ETHOS8192 : $totalEthos8192 ( di kali 1 )
-- TOTAL COMPLETED QUEST JOURNEY : $totalCompletedJourney ( di kali 1000 )
-- TOTAL ABSEN MINI MINER : $totalAbsenMiniMiner ( di kali 100 )
+- FLIP : $totalFlip ( *10 )
+- SOGOL : $totalCompletedJourney ( *5000 )
+- MINI MINER : $totalAbsenMiniMiner ( *100 ) [ POINT TIDAK DI HITUNG ! ]
+
+- ETHOS8192 : $totalEthos8192 ( *1 ) 
+ $fee * SUI TELAH TERPAKAI UNTUK BIAYA TRANSAKSI *
+
 - MY RANK : $myRank
 - MY SCORE : $myScore
+- SUSPECTED BOT : $suspectedBot
+============================================================
 ");
 // kalo print nya rusak bisa benerin sendiri yah! :p
 curl_close($ch);
