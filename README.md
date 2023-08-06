@@ -8,3 +8,4 @@
 5. cd C:\xampp\php ( default )
 6. php main.php
 
+Quest 1 ENDED (28/07/2023). This script maybe it's not working again!
